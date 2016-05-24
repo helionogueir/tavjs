@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TavJS - Test Automated and Validate in JavaScrit</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/src/tavjs.developer.js"></script>
+        <script>
+            window.onload = function () {
+                tavJS.make({
+                    'pathRoot': '/src'
+                });
+            };
+            function formValidate(formObject) {
+                var result = JSON.stringify(tavJS.test.run(formObject));
+                console.log(result);
+                alert(result);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="container-header">
+                <h2>TavJS</h2>
+                <h3>Test Automated and Validate in JavaScrit</h3>
+            </div>
+            <div class="container-form">
+                <form name="form-sample" id="form-sample" method="post" onsubmit="return false;">
+                    <fieldset>
+                        <legend>Integer</legend>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="field-integer-input-text">Input</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="field-integer-input-text"
+                                       name="field-integer-input-text"
+                                       class="tavjs-state-require tavjs-mask-integer tavjs-validate-integer">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="field-integer-textarea">TextArea</label></div>
+                            <div class="form-field-value">
+                                <textarea id="field-integer-textarea"
+                                          name="field-integer-textarea"
+                                          class="tavjs-state-require tavjs-mask-integer tavjs-validate-integer"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Action</legend>
+                        <div class="form-field-button">
+                            <button type="button" onclick="formValidate(this.form);">Validate</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
