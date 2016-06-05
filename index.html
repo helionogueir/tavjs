@@ -17,47 +17,146 @@
                 alert(result);
             }
         </script>
+        <style type="text/css">
+            html, body {
+                margin: 0;
+                padding: 0;
+                color: #565656;
+                font-size: 1em;
+                text-align: left;
+                font-family: sans-serif;
+            }
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            h4 {
+                font-size: 1em;
+            }
+            h5 {
+                font-size: 0.8em;
+            }
+            h6 {
+                font-size: 0.6em;
+            }
+            p, span {
+                margin: 0;
+                padding: 0;
+                font-size: 0.85em;
+            }
+            form fieldset {
+                margin: 0;
+                padding: 10px;
+                margin: 10px;
+            }
+            form fieldset legend {
+                margin: 0;
+                padding: 0 5px;
+                font-weight: bold;
+                font-size: 0.8em;
+            }
+            .container {
+            }
+            .container .container-form {
+            }
+            .container .container-form .form-sample {
+                margin: 10px;
+                padding: 10px;
+                background-color: #ffffcc;
+            }
+            .container .container-form .form-sample .form-sample-title {
+                color: #535353;
+                font-size: 0.8em;
+                font-weight: bold;
+                font-style: italic;
+            }
+            .container .container-form .form-sample .form-sample-group {
+                padding: 0 20px;
+            }
+            .container .container-form .form-sample .form-sample-label-valid,
+            .container .container-form .form-sample .form-sample-label-invalid {
+                font-size: 0.8em;
+                font-style: italic;
+            }
+            .container .container-form .form-sample .form-sample-label-valid {
+                color: green;
+            }
+            .container .container-form .form-sample .form-sample-label-invalid {
+                color: red;
+            }
+            .container .container-form .form-sample .form-sample-value {
+                font-size: 0.8em;
+            }
+            .container .container-form .form-group {
+            }
+            .container .container-form .form-group .form-field-label {
+                font-size: 0.8em;
+            }
+            .container .container-form .form-group .form-field-value {
+            }
+            .container .container-form .form-group .form-field-value input[type='text'] {
+                width: 99%;
+                padding: 2px;
+            }
+            .container .container-form .form-group .form-field-button {
+                padding: 10px;
+                text-align: center;
+                background-color: #fafafa;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
             <div class="container-header">
-                <h2>TavJS</h2>
-                <h3>Test Automated and Validate in JavaScrit</h3>
+                <h3>TavJS</h3>
+                <h4>Test Automated and Validate in JavaScrit</h4>
             </div>
             <div class="container-form">
                 <form name="form-sample" id="form-sample" method="post" onsubmit="return false;">
                     <fieldset>
-                        <legend>Integer</legend>
+                        <legend>Email</legend>
+                        <div class="form-sample">
+                            <p class="form-sample-title">Sample:</p>
+                            <div class="form-sample-group">
+                                <span class="form-sample-label-valid">Valid:</span>
+                                <span class="form-sample-value">email@tavjs.com</span>
+                            </div>
+                            <div class="form-sample-group">
+                                <span class="form-sample-label-invalid">Invalid:</span>
+                                <span class="form-sample-value">emailatavjs.com</span>
+                            </div>
+                        </div>
                         <div class="form-group">
-                            <div class="form-field-label"><label for="field-integer-input-text">Input</label></div>
+                            <div class="form-field-label"><label for="field-email-input-text">Input</label></div>
                             <div class="form-field-value">
                                 <input type="text"
-                                       id="field-integer-input-text"
-                                       name="field-integer-input-text"
+                                       id="field-email-input-text"
+                                       name="field-email-input-text"
                                        class="tavjs-state-require tavjs-mask-float tavjs-validate-float">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="form-field-label"><label for="field-integer-textarea">TextArea</label></div>
-                            <div class="form-field-value">
-                                <textarea id="field-integer-textarea"
-                                          name="field-integer-textarea"
-                                          class="tavjs-state-require tavjs-mask-integer tavjs-validate-integer"></textarea>
-                            </div>
-                        </div>
                     </fieldset>
-                    <fieldset>
-                        <legend>Action</legend>
-                        <div class="form-field-button">
-                            <button type="button" onclick="formValidate(this.form);">Validate</button>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-            <div class="container-form">
-                <form name="form-sample" id="form-sample" method="post" onsubmit="return false;">
                     <fieldset>
                         <legend>Float</legend>
+                        <div class="form-sample">
+                            <p class="form-sample-title">Sample:</p>
+                            <div class="form-sample-group">
+                                <span class="form-sample-label-valid">Valid:</span>
+                                <span class="form-sample-value">10.00</span>
+                            </div>
+                            <div class="form-sample-group">
+                                <span class="form-sample-label-invalid">Invalid:</span>
+                                <span class="form-sample-value">10.ABC</span>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="form-field-label"><label for="field-float-input-text">Input</label></div>
                             <div class="form-field-value">
@@ -67,21 +166,78 @@
                                        class="tavjs-state-require tavjs-mask-float tavjs-validate-float">
                             </div>
                         </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Integer</legend>
+                        <div class="form-sample">
+                            <p class="form-sample-title">Sample:</p>
+                            <div class="form-sample-group">
+                                <span class="form-sample-label-valid">Valid:</span>
+                                <span class="form-sample-value">10</span>
+                            </div>
+                            <div class="form-sample-group">
+                                <span class="form-sample-label-invalid">Invalid:</span>
+                                <span class="form-sample-value">10.00</span>
+                            </div>
+                        </div>
                         <div class="form-group">
-                            <div class="form-field-label"><label for="field-float-textarea">TextArea</label></div>
+                            <div class="form-field-label"><label for="field-integer-input-text">Input</label></div>
                             <div class="form-field-value">
-                                <textarea id="field-float-textarea"
-                                          name="field-float-textarea"
-                                          class="tavjs-state-require tavjs-mask-float tavjs-validate-float"></textarea>
+                                <input type="text"
+                                       id="field-integer-input-text"
+                                       name="field-integer-input-text"
+                                       class="tavjs-state-require tavjs-mask-float tavjs-validate-float">
                             </div>
                         </div>
                     </fieldset>
                     <fieldset>
-                        <legend>Action</legend>
+                        <legend>String</legend>
+                        <div class="form-sample">
+                            <p class="form-sample-title">Sample:</p>
+                            <div class="form-sample-group">
+                                <span class="form-sample-label-valid">Valid:</span>
+                                <span class="form-sample-value">All inputs</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="field-string-input-text">Input</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="field-string-input-text"
+                                       name="field-string-input-text"
+                                       class="tavjs-state-require tavjs-mask-float tavjs-validate-string">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>URL</legend>
+                        <div class="form-sample">
+                            <p class="form-sample-title">Sample:</p>
+                            <div class="form-sample-group">
+                                <span class="form-sample-label-valid">Valid:</span>
+                                <span class="form-sample-value">http://tavjs.qalt-ed.com.br</span>
+                            </div>
+                            <div class="form-sample-group">
+                                <span class="form-sample-label-invalid">Invalid:</span>
+                                <span class="form-sample-value">tavjs.qalt-ed.com.br</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="field-url-input-text">Input</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="field-url-input-text"
+                                       name="field-url-input-text"
+                                       class="tavjs-state-require tavjs-mask-float tavjs-validate-url">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <hr>
+                    <div class="form-group">
                         <div class="form-field-button">
                             <button type="button" onclick="formValidate(this.form);">Validate</button>
                         </div>
-                    </fieldset>
+                    </div>
                 </form>
             </div>
         </div>
