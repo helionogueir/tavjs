@@ -1,8 +1,11 @@
-/* global tavJS */
+/* global tavJS, HTMLFormElement, Object */
 
 /**
- * Get start validate
+ * Get run tests in form (HTMLFormElement)
+ * @author Helio de Paula Nogueira <helio.nogueir@gmail.com>
+ * @version 1.0.0
  * 
+ * @param {formObject} formObject HTMLFormElement
  * @returns {Array} Results of validate
  */
 tavJS.test.run = function (formObject) {
@@ -12,7 +15,7 @@ tavJS.test.run = function (formObject) {
         var rowSet = new Array();
         // Data
         tavJS.import('core/data');
-        for (var i = 0, element; element = formObject.elements[i++]; ) {
+        for (var i = 0, element; (element = formObject.elements[i++]); ) {
             var row = tavJS.data.get(element);
             if (null !== row) {
                 rowSet[index++] = row;

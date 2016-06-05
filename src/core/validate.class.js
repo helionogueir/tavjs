@@ -1,7 +1,9 @@
-/* global tavJS */
+/* global tavJS, undefined */
 
 /**
- * Test elements with validate
+ * Validate each element of TavJS
+ * @author Helio de Paula Nogueira <helio.nogueir@gmail.com>
+ * @version 1.0.0
  * 
  * @param {Array} rowSet list of elements
  * @returns {Array} Results of validate

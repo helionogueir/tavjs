@@ -1,7 +1,9 @@
-/* global tavJS */
+/* global tavJS, undefined, Object */
 
 /**
- * Mount value
+ * Mount object with value of element
+ * @author Helio de Paula Nogueira <helio.nogueir@gmail.com>
+ * @version 1.0.0
  * 
  * @parameter {HTMLFormElement} elementObject
  * @returns {object} Values of element

@@ -1,3 +1,5 @@
+/* global undefied, console, eval */
+
 /**
  * TavJS - Test Automated and Validate in JavaScrit
  * 
@@ -39,19 +41,20 @@ var tavJS = new function () {
     /**
      * Construct validate class
      * 
-     * @parameter {object} parameter
+     * @param {object} parameter Parameter of application
      * @returns {null}
      */
     this.make = function (parameter) {
         if (tavJS.mount(parameter)) {
             tavJS.import('core/test');
         }
+        return null;
     };
 
     /**
      * Mount parameters
      * 
-     * @parameter {object} parameter
+     * @param {object} parameter Parameter of application
      * @returns {bool} True params is ok, False is not ok
      */
     this.mount = function (parameter) {
@@ -69,8 +72,7 @@ var tavJS = new function () {
 
     /**
      * Import class
-     * 
-     * @parameter {string} filename Name of file that will import
+     * @param {string} filename Name of file that will import
      * @returns {bool} True load file, False no load file
      */
     this.import = function (filename) {
@@ -91,7 +93,7 @@ var tavJS = new function () {
     /**
      * Confirm if url did load
      * 
-     * @parameter {string} URL of filename
+     * @param {string} url URL of filename
      * @returns {bool} True load file, False no load file
      */
     this.isLoad = function (url) {

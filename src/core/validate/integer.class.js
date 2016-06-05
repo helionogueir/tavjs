@@ -1,7 +1,9 @@
-/* global tavJS */
+/* global tavJS, undefied, Object */
 
 /**
  * Integer validate test
+ * @author Helio de Paula Nogueira <helio.nogueir@gmail.com>
+ * @version 1.0.0
  * 
  * @param {object} data Element that will test
  * @returns {object} Results of validate
