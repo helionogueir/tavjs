@@ -7,37 +7,30 @@
  * @version 1.0.0
  */
 var tavJS = new function () {
-
     /**
      * Parameters of application
      */
     this.parameter = new Object();
-
     /**
      * Control of data and values
      */
     this.data = new Object();
-
     /**
      * Control mask of values
      */
     this.mask = new Object();
-
     /**
      * Control states of values
      */
     this.state = new Object();
-
     /**
      * Rules of validate
      */
     this.validate = new Object();
-
     /**
      * Rules of test
      */
     this.test = new Object();
-
     /**
      * Construct validate class
      * 
@@ -50,7 +43,6 @@ var tavJS = new function () {
         }
         return null;
     };
-
     /**
      * Mount parameters
      * 
@@ -69,7 +61,6 @@ var tavJS = new function () {
         }
         return auth;
     };
-
     /**
      * Import class
      * @param {string} filename Name of file that will import
@@ -89,7 +80,6 @@ var tavJS = new function () {
         }
         return auth;
     };
-
     /**
      * Confirm if url did load
      * 
