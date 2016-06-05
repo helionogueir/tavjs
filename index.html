@@ -34,7 +34,7 @@
                                 <input type="text"
                                        id="field-integer-input-text"
                                        name="field-integer-input-text"
-                                       class="tavjs-state-require tavjs-mask-integer tavjs-validate-integer">
+                                       class="tavjs-state-require tavjs-mask-float tavjs-validate-float">
                             </div>
                         </div>
                         <div class="form-group">
@@ -43,6 +43,36 @@
                                 <textarea id="field-integer-textarea"
                                           name="field-integer-textarea"
                                           class="tavjs-state-require tavjs-mask-integer tavjs-validate-integer"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Action</legend>
+                        <div class="form-field-button">
+                            <button type="button" onclick="formValidate(this.form);">Validate</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="container-form">
+                <form name="form-sample" id="form-sample" method="post" onsubmit="return false;">
+                    <fieldset>
+                        <legend>Float</legend>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="field-float-input-text">Input</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="field-float-input-text"
+                                       name="field-float-input-text"
+                                       class="tavjs-state-require tavjs-mask-float tavjs-validate-float">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="field-float-textarea">TextArea</label></div>
+                            <div class="form-field-value">
+                                <textarea id="field-float-textarea"
+                                          name="field-float-textarea"
+                                          class="tavjs-state-require tavjs-mask-float tavjs-validate-float"></textarea>
                             </div>
                         </div>
                     </fieldset>
