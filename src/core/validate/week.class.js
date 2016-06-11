@@ -10,14 +10,18 @@
  */
 tavJS.validate.week = function (data) {
     var result = null;
-     var pattern = /^[1-7]{0,1}$/;
-    if ((data instanceof Object) && (undefined !== data.name) && (undefined !== data.value)) {
-        result = new Object();
-        result[data.name] = new Object({
-            'id': ((undefined !== data.id)) ? data.id : '',
-            'name': data.name,
-            'status': (('' !== data.value)) ? pattern.test(data.value) : true
-        });
+    try {
+        var pattern = /^[1-7]{0,1}$/;
+        if ((data instanceof Object) && (undefined !== data.name) && (undefined !== data.value)) {
+            result = new Object();
+            result[data.name] = new Object({
+                'id': ((undefined !== data.id)) ? data.id : '',
+                'name': data.name,
+                'status': (('' !== data.value)) ? pattern.test(data.value) : true
+            });
+        }
+    } catch (ex) {
+        console.log(ex);
     }
     return result;
 };

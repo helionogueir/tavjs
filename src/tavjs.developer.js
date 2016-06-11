@@ -51,13 +51,17 @@ var tavJS = new function () {
      */
     this.mount = function (parameter) {
         var auth = false;
-        // parameter <Object>
-        if (parameter instanceof Object) {
-            // pathRoot <String>
-            if ((undefined !== parameter.pathRoot) && ('' !== parameter.pathRoot) && (null !== parameter.pathRoot)) {
-                tavJS.parameter.pathRoot = parameter.pathRoot;
-                auth = true;
+        try {
+            // parameter <Object>
+            if (parameter instanceof Object) {
+                // pathRoot <String>
+                if ((undefined !== parameter.pathRoot) && ('' !== parameter.pathRoot) && (null !== parameter.pathRoot)) {
+                    tavJS.parameter.pathRoot = parameter.pathRoot;
+                    auth = true;
+                }
             }
+        } catch (ex) {
+            console.log(ex);
         }
         return auth;
     };
@@ -68,15 +72,19 @@ var tavJS = new function () {
      */
     this.import = function (filename) {
         var auth = false;
-        if ((undefined !== filename) && ('' !== filename) && (null !== filename)) {
-            var url = tavJS.parameter.pathRoot + '/' + filename + '.class.js';
-            if (!tavJS.isLoad(url)) {
-                var head = window.document.head;
-                var script = window.document.createElement('script');
-                script.src = url;
-                head.appendChild(script);
-                auth = tavJS.isLoad(url);
+        try {
+            if ((undefined !== filename) && ('' !== filename) && (null !== filename)) {
+                var url = tavJS.parameter.pathRoot + '/' + filename + '.class.js';
+                if (!tavJS.isLoad(url)) {
+                    var head = window.document.head;
+                    var script = window.document.createElement('script');
+                    script.src = url;
+                    head.appendChild(script);
+                    auth = tavJS.isLoad(url);
+                }
             }
+        } catch (ex) {
+            console.log(ex);
         }
         return auth;
     };
@@ -88,25 +96,29 @@ var tavJS = new function () {
      */
     this.isLoad = function (url) {
         var auth = false;
-        if ((undefined !== url) && ('' !== url) && (null !== url)) {
-            var ajax = new XMLHttpRequest();
-            ajax.open('GET', url, false);
-            ajax.onreadystatechange = function () {
-                var script = ajax.response || ajax.responseText;
-                if (ajax.readyState === 4) {
-                    switch (ajax.status) {
-                        case 200:
-                            eval.apply(window, [script]);
-                            auth = true;
-                            break;
-                        default:
-                            auth = false;
-                            console.log('(' + ajax.status + ') ' + url);
-                            break;
+        try {
+            if ((undefined !== url) && ('' !== url) && (null !== url)) {
+                var ajax = new XMLHttpRequest();
+                ajax.open('GET', url, false);
+                ajax.onreadystatechange = function () {
+                    var script = ajax.response || ajax.responseText;
+                    if (ajax.readyState === 4) {
+                        switch (ajax.status) {
+                            case 200:
+                                eval.apply(window, [script]);
+                                auth = true;
+                                break;
+                            default:
+                                auth = false;
+                                console.log('(' + ajax.status + ') ' + url);
+                                break;
+                        }
                     }
-                }
-            };
-            ajax.send(null);
+                };
+                ajax.send(null);
+            }
+        } catch (ex) {
+            console.log(ex);
         }
         return auth;
     };

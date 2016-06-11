@@ -4,19 +4,6 @@
         <title>TavJS - Test Automated and Validate in JavaScrit</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="/src/tavjs.developer.js"></script>
-        <script>
-            window.onload = function () {
-                tavJS.make({
-                    'pathRoot': '/src'
-                });
-            };
-            function formValidate(formObject) {
-                var result = JSON.stringify(tavJS.test.run(formObject));
-                console.log(result);
-                alert(result);
-            }
-        </script>
         <style type="text/css">
             html, body {
                 margin: 0;
@@ -333,5 +320,18 @@
                 </form>
             </div>
         </div>
+        <script src="/src/tavjs.developer.js"></script>
+        <script>
+                                window.onload = function () {
+                                    tavJS.make({
+                                        'pathRoot': '/src'
+                                    });
+                                };
+                                function formValidate(formObject) {
+                                    var result = JSON.stringify(tavJS.test.run(formObject));
+                                    console.log(result);
+                                    alert(result);
+                                }
+        </script>
     </body>
 </html>

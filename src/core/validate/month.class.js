@@ -10,14 +10,18 @@
  */
 tavJS.validate.month = function (data) {
     var result = null;
-    var pattern = /^01|02|03|04|05|06|07|08|09|10|11|12$/;
-    if ((data instanceof Object) && (undefined !== data.name) && (undefined !== data.value)) {
-        result = new Object();
-        result[data.name] = new Object({
-            'id': ((undefined !== data.id)) ? data.id : '',
-            'name': data.name,
-            'status': (('' !== data.value)) ? pattern.test(data.value) : true
-        });
+    try {
+        var pattern = /^01|02|03|04|05|06|07|08|09|10|11|12$/;
+        if ((data instanceof Object) && (undefined !== data.name) && (undefined !== data.value)) {
+            result = new Object();
+            result[data.name] = new Object({
+                'id': ((undefined !== data.id)) ? data.id : '',
+                'name': data.name,
+                'status': (('' !== data.value)) ? pattern.test(data.value) : true
+            });
+        }
+    } catch (ex) {
+        console.log(ex);
     }
     return result;
 };
