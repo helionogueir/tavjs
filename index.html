@@ -54,34 +54,6 @@
             }
             .container .container-form {
             }
-            .container .container-form .form-sample {
-                margin: 10px;
-                padding: 10px;
-                background-color: #ffffcc;
-            }
-            .container .container-form .form-sample .form-sample-title {
-                color: #535353;
-                font-size: 0.8em;
-                font-weight: bold;
-                font-style: italic;
-            }
-            .container .container-form .form-sample .form-sample-group {
-                padding: 0 20px;
-            }
-            .container .container-form .form-sample .form-sample-label-valid,
-            .container .container-form .form-sample .form-sample-label-invalid {
-                font-size: 0.8em;
-                font-style: italic;
-            }
-            .container .container-form .form-sample .form-sample-label-valid {
-                color: green;
-            }
-            .container .container-form .form-sample .form-sample-label-invalid {
-                color: red;
-            }
-            .container .container-form .form-sample .form-sample-value {
-                font-size: 0.8em;
-            }
             .container .container-form .form-group {
             }
             .container .container-form .form-group .form-field-label {
@@ -108,130 +80,142 @@
             </div>
             <div class="container-form">
                 <form name="form-sample" id="form-sample" method="post" onsubmit="return false;">
+                    <!-- Day -->
                     <fieldset>
                         <legend>Day</legend>
-                        <div class="form-sample">
-                            <p class="form-sample-title">Sample:</p>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-valid">Valid:</span>
-                                <span class="form-sample-value">01</span>
-                            </div>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-invalid">Invalid:</span>
-                                <span class="form-sample-value">32</span>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="day-digit-one">One Digit</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="day-digit-one"
+                                       name="day-digit-one"
+                                       class="tavjs-validate-day-digit-one" value="1">
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="form-field-label"><label for="field-day-input-text">Input</label></div>
+                            <div class="form-field-label"><label for="day-digit-two">Two Digit</label></div>
                             <div class="form-field-value">
                                 <input type="text"
-                                       id="field-day-input-text"
-                                       name="field-day-input-text"
-                                       class="tavjs-validate-day-digit-both">
+                                       id="day-digit-two"
+                                       name="day-digit-two"
+                                       class="tavjs-validate-day-digit-two" value="01">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="day-digit-both">Both Digit</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="day-digit-both"
+                                       name="day-digit-both"
+                                       class="tavjs-validate-day-digit-both" value="01">
                             </div>
                         </div>
                     </fieldset>
+                    <!-- /Day -->
+                    <!-- Email -->
                     <fieldset>
                         <legend>Email</legend>
-                        <div class="form-sample">
-                            <p class="form-sample-title">Sample:</p>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-valid">Valid:</span>
-                                <span class="form-sample-value">email@tavjs.com</span>
-                            </div>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-invalid">Invalid:</span>
-                                <span class="form-sample-value">emailatavjs.com</span>
-                            </div>
-                        </div>
                         <div class="form-group">
-                            <div class="form-field-label"><label for="field-email-input-text">Input</label></div>
+                            <div class="form-field-label"><label for="email">Email</label></div>
                             <div class="form-field-value">
                                 <input type="text"
-                                       id="field-email-input-text"
-                                       name="field-email-input-text"
-                                       class="tavjs-validate-email">
+                                       id="email"
+                                       name="email"
+                                       class="tavjs-validate-email" value="email@tavjs.com">
                             </div>
                         </div>
                     </fieldset>
+                    <!-- /Email -->
+                    <!-- Float -->
                     <fieldset>
                         <legend>Float</legend>
-                        <div class="form-sample">
-                            <p class="form-sample-title">Sample:</p>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-valid">Valid:</span>
-                                <span class="form-sample-value">-10,101</span>
-                            </div>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-invalid">Invalid:</span>
-                                <span class="form-sample-value">10.00</span>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="float-dot-2">Dot with 2 digits</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="float-dot-2"
+                                       name="float-dot-2"
+                                       class="tavjs-validate-float-dot-2" value="15.25">
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="form-field-label"><label for="field-float-input-text">Input</label></div>
+                            <div class="form-field-label"><label for="float-comma-3">Comma with 3 digits</label></div>
                             <div class="form-field-value">
                                 <input type="text"
-                                       id="field-float-input-text"
-                                       name="field-float-input-text"
-                                       class="tavjs-validate-float-dot-5">
+                                       id="float-comma-3"
+                                       name="float-comma-3"
+                                       class="tavjs-validate-float-comma-3" value="55,057">
                             </div>
                         </div>
                     </fieldset>
+                    <!-- /Float -->
+                    <!-- Integer -->
                     <fieldset>
                         <legend>Integer</legend>
-                        <div class="form-sample">
-                            <p class="form-sample-title">Sample:</p>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-valid">Valid:</span>
-                                <span class="form-sample-value">10</span>
-                            </div>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-invalid">Invalid:</span>
-                                <span class="form-sample-value">10.00</span>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="integer">Integer</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="integer"
+                                       name="integer"
+                                       class="tavjs-validate-integer" value="10">
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="form-field-label"><label for="field-integer-input-text">Input</label></div>
+                            <div class="form-field-label"><label for="integer-positive">Integer Positive</label></div>
                             <div class="form-field-value">
                                 <input type="text"
-                                       id="field-integer-input-text"
-                                       name="field-integer-input-text"
-                                       class="tavjs-validate-integer">
+                                       id="integer-positive"
+                                       name="integer-positive"
+                                       class="tavjs-validate-integer" value="+10">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="integer-negative">Integer Negative</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="integer-negative"
+                                       name="integer-negative"
+                                       class="tavjs-validate-integer" value="-10">
                             </div>
                         </div>
                     </fieldset>
+                    <!-- /Integer -->
+                    <!-- /Month -->
                     <fieldset>
                         <legend>Month</legend>
-                        <div class="form-sample">
-                            <p class="form-sample-title">Sample:</p>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-valid">Valid:</span>
-                                <span class="form-sample-value">01,02,03,04,05,06,07,08,09,10,11,12</span>
-                            </div>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-invalid">Invalid:</span>
-                                <span class="form-sample-value">jan, feb, apr</span>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="day-month-one">One Digit</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="month-digit-one"
+                                       name="month-digit-one"
+                                       class="tavjs-validate-month-digit-one" value="2">
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="form-field-label"><label for="field-month-input-text">Input</label></div>
+                            <div class="form-field-label"><label for="month-digit-two">Two Digit</label></div>
                             <div class="form-field-value">
                                 <input type="text"
-                                       id="field-month-input-text"
-                                       name="field-month-input-text"
-                                       class="tavjs-validate-month-digit-one">
+                                       id="month-digit-two"
+                                       name="month-digit-two"
+                                       class="tavjs-validate-month-digit-two" value="02">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="month-digit-both">Both Digit</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="month-digit-both"
+                                       name="month-digit-both"
+                                       class="tavjs-validate-month-digit-both" value="2">
                             </div>
                         </div>
                     </fieldset>
+                    <!-- /Month -->
+                    <!-- /String -->
                     <fieldset>
                         <legend>String</legend>
-                        <div class="form-sample">
-                            <p class="form-sample-title">Sample:</p>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-valid">Valid:</span>
-                                <span class="form-sample-value">All inputs</span>
-                            </div>
-                        </div>
                         <div class="form-group">
                             <div class="form-field-label"><label for="field-string-input-text">Input</label></div>
                             <div class="form-field-value">
@@ -242,6 +226,7 @@
                             </div>
                         </div>
                     </fieldset>
+                    <!-- /String -->
                     <fieldset>
                         <legend>URL</legend>
                         <div class="form-sample">
