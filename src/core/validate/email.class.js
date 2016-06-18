@@ -11,7 +11,7 @@
 tavJS.validate.email = function (data) {
     var result = null;
     try {
-        var pattern = /^[a-zA-Z0-9][a-zA-Z0-9\._-]+@([a-zA-Z0-9\._-]+\.)[a-zA-Z-0-9]{2,3}/;
+        var pattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/igm;
         if ((data instanceof Object) && (undefined !== data.name) && (undefined !== data.value)) {
             result = new Object();
             result[data.name] = new Object({

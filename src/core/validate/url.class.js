@@ -10,16 +10,44 @@
  */
 tavJS.validate.url = function (data) {
     var result = null;
-    try{
-    var pattern = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/;
-    if ((data instanceof Object) && (undefined !== data.name) && (undefined !== data.value)) {
-        result = new Object();
-        result[data.name] = new Object({
-            'id': ((undefined !== data.id)) ? data.id : '',
-            'name': data.name,
-            'status': (('' !== data.value)) ? pattern.test(data.value) : true
-        });
-    }
+    /**
+     * Construct Regexp of validate
+     * 
+     * @param {object} data Parameter of validate
+     * @returns {RegExp} Return RegExp
+     */
+    this.prefix = function (data) {
+        var pattern = new RegExp(/^([a-z]{3,9}:\/\/)+(.*)$/);
+        if ((undefined !== data.behavior) && ('' !== data.behavior) && (null !== data.behavior)) {
+            if ((undefined !== data.behavior.prefix) && ('' !== data.behavior.prefix) && (null !== data.behavior.prefix)) {
+                switch (data.behavior.prefix) {
+                    case 'http':
+                        pattern = new RegExp(/^((http)|(https):\/\/)+(.*)$/);
+                        break;
+                    case 'ftp':
+                        pattern = new RegExp(/^((ftp):\/\/)+(.*)$/);
+                        break;
+                    case 'all':
+                        pattern = new RegExp(/^([a-z]{3,9}:\/\/)+(.*)$/);
+                        break;
+                    case 'none':
+                        pattern = new RegExp(/^(.*)+(.*)$/);
+                        break;
+                }
+            }
+        }
+        return pattern;
+    };
+    try {
+        var pattern = this.prefix(data);
+        if ((data instanceof Object) && (undefined !== data.name) && (undefined !== data.value)) {
+            result = new Object();
+            result[data.name] = new Object({
+                'id': ((undefined !== data.id)) ? data.id : '',
+                'name': data.name,
+                'status': (('' !== data.value)) ? pattern.test(data.value) : true
+            });
+        }
     } catch (ex) {
         console.log(ex);
     }

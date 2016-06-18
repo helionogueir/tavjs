@@ -1,14 +1,14 @@
-/* global tavJS, undefied, Object */
+/* global tavJS, undefined, Object */
 
 /**
- * month validate test
+ * Year validate test
  * @author Matheus Fidelis <msfidelis01@gmail.com>
  * @version 1.0.0
- * 
+ *
  * @param {object} data Element that will test
  * @returns {object} Results of validate
  */
-tavJS.validate.month = function (data) {
+tavJS.validate.year = function (data) {
     var result = null;
     /**
      * Construct Regexp of validate
@@ -16,26 +16,17 @@ tavJS.validate.month = function (data) {
      * @param {object} data Parameter of validate
      * @returns {RegExp} Return RegExp
      */
-    this.digit = function (data) {
-        var pattern = new RegExp(/^((01|1)|(02|2)|(03|3)|(04|4)|(05|5)|(06|6)|(07|7)|(08|8)|(09|9)|(10)|(11)|(12))$/);
+    this.format = function (data) {
+        var pattern = new RegExp(/^(\d{1,4})$/);
         if ((undefined !== data.behavior) && ('' !== data.behavior) && (null !== data.behavior)) {
-            if ((undefined !== data.behavior.digit) && ('' !== data.behavior.digit) && (null !== data.behavior.digit)) {
-                switch (data.behavior.digit) {
-                    case 'one':
-                        pattern = new RegExp(/^((1)|(2)|(3)|(4)|(5)|(6)|(7)|(8)|(9)|(10)|(11)|(12))$/);
-                        break;
-                    case 'two':
-                        pattern = new RegExp(/^((01)|(02)|(03)|(04)|(05)|(06)|(07)|(08)|(09)|(10)|(11)|(12))$/);
-                        break;
-                    case 'both':
-                        break;
-                }
+            if ((undefined !== data.behavior.format) && ('' !== data.behavior.format) && (null !== data.behavior.format)) {
+                pattern = new RegExp('^(\\d{' + data.behavior.format.length + '})$');
             }
         }
         return pattern;
     };
     try {
-        var pattern = this.digit(data);
+        var pattern = this.format(data);
         if ((data instanceof Object) && (undefined !== data.name) && (undefined !== data.value)) {
             result = new Object();
             result[data.name] = new Object({

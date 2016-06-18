@@ -13,6 +13,7 @@ tavJS.validate.test = function (rowSet) {
     var data = new Array();
     try {
         var pattern = /^(tavjs)\-(validate)\-(.*)$/i;
+        var patternBehavior = /^(tavjs)\-(validate)\-(.*)\-(.*)\-(.*)$/i;
         if ((rowSet instanceof Array) && rowSet.length) {
             for (var i = 0, row; row = rowSet[i++]; ) {
                 if ((undefined !== row.classname) && ('' !== row.classname) && (null !== row.classname)) {
@@ -21,6 +22,11 @@ tavJS.validate.test = function (rowSet) {
                         for (var k = 0, classname; classname = classnameList[k++]; ) {
                             if (pattern.test(classname)) {
                                 var classImport = classname.replace(pattern, '$3');
+                                if (patternBehavior.test(classname)) {
+                                    var classImport = classname.replace(patternBehavior, '$3');
+                                    row.behavior = new Object();
+                                    row.behavior[classname.replace(patternBehavior, '$4')] = classname.replace(patternBehavior, '$5');
+                                }
                                 tavJS.import('core/validate/' + classImport);
                                 var test = tavJS.validate[classImport](row);
                                 if (null !== test) {

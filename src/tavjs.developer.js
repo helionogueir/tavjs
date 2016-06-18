@@ -10,7 +10,14 @@ var tavJS = new function () {
     /**
      * Parameters of application
      */
-    this.parameter = new Object();
+    this.parameter = new Object({
+        'pathRoot': null,
+        'number': {
+            'afterComma': '2',
+            'separator': '.'
+        }
+
+    });
     /**
      * Control of data and values
      */
@@ -38,33 +45,79 @@ var tavJS = new function () {
      * @returns {null}
      */
     this.make = function (parameter) {
-        if (tavJS.mount(parameter)) {
+        if (tavJS.mount.run(parameter)) {
             tavJS.import('core/test');
         }
         return null;
     };
     /**
      * Mount parameters
-     * 
-     * @param {object} parameter Parameter of application
-     * @returns {bool} True params is ok, False is not ok
      */
-    this.mount = function (parameter) {
-        var auth = false;
-        try {
-            // parameter <Object>
-            if (parameter instanceof Object) {
-                // pathRoot <String>
-                if ((undefined !== parameter.pathRoot) && ('' !== parameter.pathRoot) && (null !== parameter.pathRoot)) {
-                    tavJS.parameter.pathRoot = parameter.pathRoot;
+    this.mount = new function () {
+        /**
+         * Mount parameters
+         * 
+         * @param {object} parameter Parameter of application
+         * @returns {bool} True params is ok, False is not ok
+         */
+        this.run = function (parameter) {
+            var auth = false;
+            if (tavJS.mount.pathRoot(parameter)) {
+                // Mandatory
+                if (tavJS.mount.pathRoot(parameter)) {
                     auth = true;
                 }
+                // Optional
+                tavJS.mount.number(parameter);
             }
-        } catch (ex) {
-            console.log(ex);
-        }
-        return auth;
-    };
+            return auth;
+        };
+        /**
+         * Mount pathRoot 
+         * 
+         * @param {object} parameter Parameter of application
+         * @returns {bool} True params is ok, False is not ok
+         */
+        this.pathRoot = function (parameter) {
+            var auth = false;
+            try {
+                if (parameter instanceof Object) {
+                    if ((undefined !== parameter.pathRoot) && ('' !== parameter.pathRoot) && (null !== parameter.pathRoot)) {
+                        tavJS.parameter.pathRoot = parameter.pathRoot;
+                        auth = true;
+                    }
+                }
+            } catch (ex) {
+                console.log(ex);
+            }
+            return auth;
+        };
+        /**
+         * Mount number 
+         * 
+         * @param {object} parameter Parameter of application
+         * @returns {null} Without return
+         */
+        this.number = function (parameter) {
+            try {
+                if (parameter instanceof Object) {
+                    if ((parameter.number instanceof Object)) {
+                        // After Comma
+                        if ((undefined !== parameter.number.afterComma) && ('' !== parameter.number.afterComma) && (null !== parameter.number.afterComma)) {
+                            tavJS.parameter.number.afterComma = parameter.number.afterComma;
+                        }
+                        // Separator
+                        if ((undefined !== parameter.number.separator) && ('' !== parameter.number.separator) && (null !== parameter.number.separator)) {
+                            tavJS.parameter.number.separator = parameter.number.separator;
+                        }
+                    }
+                }
+            } catch (ex) {
+                console.log(ex);
+            }
+            return null;
+        };
+    }
     /**
      * Import class
      * @param {string} filename Name of file that will import

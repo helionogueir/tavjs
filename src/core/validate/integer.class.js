@@ -11,7 +11,7 @@
 tavJS.validate.integer = function (data) {
     var result = null;
     try {
-        var pattern = /(\d)/gi;
+        var pattern = /^(|\-|\+)(\d{1,})$/;
         if ((data instanceof Object) && (undefined !== data.name) && (undefined !== data.value)) {
             result = new Object();
             result[data.name] = new Object({
