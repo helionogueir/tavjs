@@ -63,12 +63,9 @@ var tavJS = new function () {
         this.run = function (parameter) {
             var auth = false;
             if (tavJS.mount.pathRoot(parameter)) {
-                // Mandatory
-                if (tavJS.mount.pathRoot(parameter)) {
-                    auth = true;
-                }
-                // Optional
-                tavJS.mount.number(parameter);
+                auth = true;
+            } else {
+                throw 'Error mount TavJS check the construct';
             }
             return auth;
         };
@@ -91,31 +88,6 @@ var tavJS = new function () {
                 console.log(ex);
             }
             return auth;
-        };
-        /**
-         * Mount number 
-         * 
-         * @param {object} parameter Parameter of application
-         * @returns {null} Without return
-         */
-        this.number = function (parameter) {
-            try {
-                if (parameter instanceof Object) {
-                    if ((parameter.number instanceof Object)) {
-                        // After Comma
-                        if ((undefined !== parameter.number.afterComma) && ('' !== parameter.number.afterComma) && (null !== parameter.number.afterComma)) {
-                            tavJS.parameter.number.afterComma = parameter.number.afterComma;
-                        }
-                        // Separator
-                        if ((undefined !== parameter.number.separator) && ('' !== parameter.number.separator) && (null !== parameter.number.separator)) {
-                            tavJS.parameter.number.separator = parameter.number.separator;
-                        }
-                    }
-                }
-            } catch (ex) {
-                console.log(ex);
-            }
-            return null;
         };
     }
     /**

@@ -217,85 +217,112 @@
                     <fieldset>
                         <legend>String</legend>
                         <div class="form-group">
-                            <div class="form-field-label"><label for="field-string-input-text">Input</label></div>
+                            <div class="form-field-label"><label for="string">String</label></div>
                             <div class="form-field-value">
                                 <input type="text"
-                                       id="field-string-input-text"
-                                       name="field-string-input-text"
-                                       class="tavjs-validate-string-input-alphanum">
+                                       id="string"
+                                       name="string"
+                                       class="tavjs-validate-string" value="#@$fnbfy shdg *** --+ ASdsd">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="string-input-alphanum">Only Alphanumeric</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="string-input-alphanum"
+                                       name="string-input-alphanum"
+                                       class="tavjs-validate-string-input-alphanum" value="AabB 12397">
                             </div>
                         </div>
                     </fieldset>
                     <!-- /String -->
+                    <!-- URL -->
                     <fieldset>
                         <legend>URL</legend>
-                        <div class="form-sample">
-                            <p class="form-sample-title">Sample:</p>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-valid">Valid:</span>
-                                <span class="form-sample-value">http://tavjs.qalt-ed.com.br</span>
-                            </div>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-invalid">Invalid:</span>
-                                <span class="form-sample-value">tavjs.qalt-ed.com.br</span>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="url-prefix-http">HTTP or HTTPS</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="url-prefix-http"
+                                       name="url-prefix-http"
+                                       class="tavjs-validate-url-prefix-http" value="https://qalt.com.br/">
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="form-field-label"><label for="field-url-input-text">Input</label></div>
+                            <div class="form-field-label"><label for="url-prefix-ftp">FTP</label></div>
                             <div class="form-field-value">
                                 <input type="text"
-                                       id="field-url-input-text"
-                                       name="field-url-input-text"
-                                       class="tavjs-validate-url-prefix-http">
+                                       id="url-prefix-ftp"
+                                       name="url-prefix-ftp"
+                                       class="tavjs-validate-url-prefix-ftp" value="ftp://qalt.com.br/">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="url-prefix-all">ALL</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="url-prefix-all"
+                                       name="url-prefix-all"
+                                       class="tavjs-validate-url-prefix-all" value="http://qalt.com.br/">
                             </div>
                         </div>
                     </fieldset>
+                    <!-- /URL -->
+                    <!-- WEEK -->
                     <fieldset>
                         <legend>Week</legend>
-                        <div class="form-sample">
-                            <p class="form-sample-title">Sample:</p>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-valid">Valid:</span>
-                                <span class="form-sample-value">01,2,03,4,05,6,07,8,09,10,11,12</span>
-                            </div>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-invalid">Invalid:</span>
-                                <span class="form-sample-value">13,14,15,00,010</span>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="week-digit-one">One Digit</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="week-digit-one"
+                                       name="week-digit-one"
+                                       class="tavjs-validate-week-digit-one" value="3">
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="form-field-label"><label for="field-week-input-text">Input</label></div>
+                            <div class="form-field-label"><label for="week-digit-two">Two Digit</label></div>
                             <div class="form-field-value">
                                 <input type="text"
-                                       id="field-week-input-text"
-                                       name="field-week-input-text"
-                                       class="tavjs-validate-week-digit-both">
+                                       id="week-digit-two"
+                                       name="week-digit-two"
+                                       class="tavjs-validate-week-digit-two" value="03">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="week-digit-both">Both Digit</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="week-digit-both"
+                                       name="week-digit-both"
+                                       class="tavjs-validate-day-digit-both" value="04">
                             </div>
                         </div>
                     </fieldset>
+                    <!-- /WEEK -->
+                    <!-- YEAR -->
                     <fieldset>
                         <legend>Year</legend>
-                        <div class="form-sample">
-                            <p class="form-sample-title">Sample:</p>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-valid">Valid:</span>
-                                <span class="form-sample-value">99,1999,00,2000</span>
-                            </div>
-                            <div class="form-sample-group">
-                                <span class="form-sample-label-invalid">Invalid:</span>
-                                <span class="form-sample-value">995,1,65555...</span>
+                        <div class="form-group">
+                            <div class="form-field-label"><label for="year-format-yy">Two Digit</label></div>
+                            <div class="form-field-value">
+                                <input type="text"
+                                       id="year-format-yy"
+                                       name="year-format-yy"
+                                       class="tavjs-validate-year-format-yy" value="99">
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="form-field-label"><label for="field-year-input-text">Input</label></div>
+                            <div class="form-field-label"><label for="year-format-yyyy">Four Digit</label></div>
                             <div class="form-field-value">
                                 <input type="text"
-                                       id="field-year-input-text"
-                                       name="field-year-input-text"
-                                       class="tavjs-validate-year-format-yyyy">
+                                       id="year-format-yyyy"
+                                       name="year-format-yyyy"
+                                       class="tavjs-validate-year-format-yyyy" value="2000">
                             </div>
                         </div>
                     </fieldset>
+                    <!-- /YEAR -->
                     <hr>
                     <div class="form-group">
                         <div class="form-field-button">

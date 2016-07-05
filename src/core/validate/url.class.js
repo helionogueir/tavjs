@@ -30,9 +30,6 @@ tavJS.validate.url = function (data) {
                     case 'all':
                         pattern = new RegExp(/^([a-z]{3,9}:\/\/)+(.*)$/);
                         break;
-                    case 'none':
-                        pattern = new RegExp(/^(.*)+(.*)$/);
-                        break;
                 }
             }
         }
