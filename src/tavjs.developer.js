@@ -11,12 +11,7 @@ var tavJS = new function () {
      * Parameters of application
      */
     this.parameter = new Object({
-        'pathRoot': null,
-        'number': {
-            'afterComma': '2',
-            'separator': '.'
-        }
-
+        'pathRoot': null
     });
     /**
      * Control of data and values
