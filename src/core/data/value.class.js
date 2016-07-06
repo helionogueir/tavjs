@@ -11,6 +11,11 @@
 tavJS.data.value = function (elementObject) {
     var data = new Object();
     try {
+        // Tagname
+        data.tagName = null;
+        if ((undefined !== elementObject.tagName) && ('' !== elementObject.tagName) && (null !== elementObject.tagName)) {
+            data.tagName = elementObject.tagName;
+        }
         // Classname
         data.classname = null;
         if ((undefined !== elementObject.className) && ('' !== elementObject.className) && (null !== elementObject.className)) {

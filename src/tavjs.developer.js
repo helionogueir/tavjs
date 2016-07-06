@@ -39,8 +39,9 @@ var tavJS = new function () {
      * @param {object} parameter Parameter of application
      * @returns {null}
      */
-    this.make = function (parameter) {
+    this.factory = function (parameter) {
         if (tavJS.mount.run(parameter)) {
+            tavJS.import('core/state/block');
             tavJS.import('core/test');
         }
         return null;

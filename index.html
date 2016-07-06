@@ -332,10 +332,10 @@
                 </form>
             </div>
         </div>
-        <script src="/src/tavjs.developer.js"></script>
+        <script src="./src/tavjs.developer.js"></script>
         <script>
                                 window.onload = function () {
-                                    tavJS.make({'pathRoot': '/src'});
+                                    tavJS.factory({'pathRoot': window.location.href + 'src'});
                                 };
                                 function formValidate(formObject) {
                                     var result = JSON.stringify(tavJS.test.run(formObject));
