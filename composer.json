@@ -1,43 +1,24 @@
 {
     "name": "helionogueir/tavjs",
-    "type": "library",
     "description": "TavJS - Test Automated and Validate with JavaScrit",
-    "keywords": ["templating"],
-    "homepage": "http://www.smarty.net",
-    "license": "LGPL-3.0",
+    "homepage": "http://www.qalt-ed.com.br/",
+    "license": "GNU3",
+    "keywords": [
+        "js",
+        "Validate"
+    ],
     "authors": [
         {
-            "name": "Monte Ohrt",
-            "email": "monte@ohrt.com"
+            "name": "Helio Nogueira",
+            "email": "helio.nogueir@gmail.com"
         },
         {
-            "name": "Uwe Tews",
-            "email": "uwe.tews@googlemail.com"
+            "name": "Matheus Fidelis",
+            "email": "msfidelis01@gmail.com"
         },
         {
-            "name": "Rodney Rehm",
-            "email": "rodney.rehm@medialize.de"
+            "name": "Emerson Silva",
+            "email": "emerson.rodsilva@gmail.com"
         }
-    ],
-    "support": {
-        "irc": "irc://irc.freenode.org/smarty",
-        "issues": "https://github.com/smarty-php/smarty/issues",
-        "forum": "http://www.smarty.net/forums/"
-    },
-    "require": {
-        "php": ">=5.2"
-    },
-    "autoload": {
-        "classmap": [
-            "libs/Smarty.class.php",
-            "libs/SmartyBC.class.php",
-            "libs/sysplugins/"
-        ]
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "3.1.x-dev"
-        }
-    }
-
+    ]
 }
