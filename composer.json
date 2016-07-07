@@ -1,24 +1,31 @@
 {
     "name": "helionogueir/tavjs",
+    "type": "library",
     "description": "TavJS - Test Automated and Validate with JavaScrit",
     "homepage": "http://www.qalt-ed.com.br/",
-    "license": "GNU3",
+    "license": "MIT",
     "keywords": [
+        "Framework",
         "js",
+        "js",
+        "JavaScript",
         "Validate"
     ],
     "authors": [
         {
             "name": "Helio Nogueira",
-            "email": "helio.nogueir@gmail.com"
+            "email": "helio.nogueir@gmail.com",
+            "role": "Arquitect, Tester, Analyst and Developer"
         },
         {
             "name": "Matheus Fidelis",
-            "email": "msfidelis01@gmail.com"
+            "email": "msfidelis01@gmail.com",
+            "role": "Developer"
         },
         {
             "name": "Emerson Silva",
-            "email": "emerson.rodsilva@gmail.com"
+            "email": "emerson.rodsilva@gmail.com",
+            "role": "Developer"
         }
     ]
 }
