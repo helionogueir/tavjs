@@ -6,16 +6,14 @@
     "license": "GNU3",
     "keywords": [
         "js",
+        "JavaScript",
         "Validate"
     ],
-    "require": {
-        "php": ">=5.3"
-    },
     "authors": [
         {
             "name": "Helio Nogueira",
             "email": "helio.nogueir@gmail.com",
-            "role": "Arquitect, Analyst and Developer"
+            "role": "Arquitect, Tester, Analyst and Developer"
         },
         {
             "name": "Matheus Fidelis",
